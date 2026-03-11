@@ -43,7 +43,7 @@ var projects = [
   {
     title: 'Funkafest',
     cover: 'imgs/05_funka_fest/funka_POST1.webp',
-    gallery: ['imgs/05_funka_fest/funka_dos.webp', 'https://vimeo.com/1172415056?share=copy&fl=sv&fe=ci', 'https://vimeo.com/1172415208?fl=ip&fe=ec'],
+    gallery: ['imgs/05_funka_fest/funka_post2.webp', 'https://vimeo.com/1172415056?share=copy&fl=sv&fe=ci', 'https://vimeo.com/1172415208?fl=ip&fe=ec', 'imgs/05_funka_fest/funka_post3.webp', 'imgs/05_funka_fest/funka_uno.webp', 'imgs/05_funka_fest/funak_4.webp', 'imgs/05_funka_fest/funka_5.webp', 'imgs/05_funka_fest/cartelera.webp', 'imgs/05_funka_fest/funka_llamada.webp'],
   },
   /* idx 6 — Krudo */
   {
