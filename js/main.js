@@ -43,7 +43,7 @@ var projects = [
   {
     title: 'Funkafest',
     cover: 'imgs/05_funka_fest/funka_POST1.webp',
-    gallery: ['imgs/05_funka_fest/funka_post2.webp', 'https://vimeo.com/1172415056?share=copy&fl=sv&fe=ci', 'https://vimeo.com/1172415208?fl=ip&fe=ec', 'imgs/05_funka_fest/funka_post3.webp', 'imgs/05_funka_fest/funka_uno.webp', 'imgs/05_funka_fest/funak_4.webp', 'imgs/05_funka_fest/funka_5.webp', 'imgs/05_funka_fest/cartelera.webp', 'imgs/05_funka_fest/funka_llamada.webp'],
+    gallery: ['imgs/05_funka_fest/funka_post2.webp', 'https://vimeo.com/1172415056?share=copy&fl=sv&fe=ci', 'https://vimeo.com/1172415208?fl=ip&fe=ec', 'imgs/05_funka_fest/funka_post3.webp', 'imgs/05_funka_fest/funka_uno.webp', 'imgs/05_funka_fest/funak_4.webp', 'imgs/05_funka_fest/funka_5.webp', 'imgs/05_funka_fest/funka_cartelera.webp', 'imgs/05_funka_fest/funka_llamada.webp'],
   },
   /* idx 6 — Krudo */
   {
@@ -255,7 +255,7 @@ var rows = [
   ],
   // #26 — wide full-width landscape
   [
-    { idx: 25, leftPct:  8, widthPct: 80, aspect: 0.40, rot:  0.5, yOffset:  0 },
+    { idx: 25, leftPct:  30, widthPct: 40, aspect: 1.40, rot:  0.5, yOffset:  0 },
   ],
   // #27 — small square centered
   [
