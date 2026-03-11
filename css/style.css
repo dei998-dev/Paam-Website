@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #000000;
+  --ink: #f4f1ea;
+  --border: rgba(244,241,234,0.2);
+  --muted: #888;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Courier Prime', monospace;
+  cursor: crosshair;
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════════════════
+   HEADER
+   ═══════════════════════════════════════════ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.site-logo img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+.site-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.site-nav span {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.15s;
+}
+
+.site-nav span:hover { opacity: 1; }
+
+/* ═══════════════════════════════════════════
+   CANVAS
+   ═══════════════════════════════════════════ */
+#canvas {
+  position: relative;
+  z-index: 1;
+}
+
+/* ═══════════════════════════════════════════
+   CARD
+   ═══════════════════════════════════════════ */
+.card {
+  position: absolute;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.18s ease;
+  will-change: transform;
+}
+
+.card:hover { z-index: 100 ; }
+
+/* All media inside a card: cover from the TOP */
+.card-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.25s ease;
+  pointer-events: none;
+}
+
+.card:hover .card-img { transform: scale(1.04); }
+
+/* Vimeo iframes inside cards — fill the card, no controls visible */
+.card iframe.card-img {
+  width: 100%;
+  height: 100%;
+  border: none;
+  /* Scale up to hide Vimeo UI chrome that can appear at edges */
+  transform: scale(1.01);
+  pointer-events: none;  /* prevent interaction — card click opens modal */
+}
+
+.card:hover iframe.card-img {
+  transform: scale(1.05);
+}
+
+/* label strip — hidden, titles only show in modal */
+.card-label { display: none; }
+
+/* ═══════════════════════════════════════════
+   FLOATING CONTACT BUTTON
+   ═══════════════════════════════════════════ */
+.contact-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 26px;
+  background: #ff5c3a;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 0 #c03a20, 0 6px 24px rgba(255,92,58,0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  animation: btn-float 3s ease-in-out infinite;
+}
+
+.contact-btn:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 6px 0 #c03a20, 0 10px 32px rgba(255,92,58,0.45);
+  animation: none;
+}
+
+.contact-btn:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: 0 2px 0 #c03a20, 0 4px 12px rgba(255,92,58,0.3);
+}
+
+@keyframes btn-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-5px); }
+}
+
+/* ── FOOTER ── */
+.site-footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border);
+  padding: 28px 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.footer-social:hover {
+  opacity: 1;
+}
+
+.footer-social img {
+  height: 22px;
+  width: auto;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE  < 700px — single column
+   ═══════════════════════════════════════════ */
+@media (max-width: 699px) {
+  .site-header { padding: 12px 16px; }
+  .site-logo img { height: 26px; }
+
+  #canvas {
+    position: static ;
+    height: auto ;
+    display: flex ;
+    flex-direction: column ;
+    gap: 12px;
+    padding: 12px ;
+  }
+
+  .card {
+    position: static ;
+    width: 100% ;
+    min-height: 300px ;
+    transform: none ;
+    overflow: hidden ;
+  }
+
+  .contact-btn {
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    font-size: 10px;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   MODAL
+   ═══════════════════════════════════════════ */
+#modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 700;
+  background: rgba(18,5,5,0.97);
+  overflow-y: auto;
+  padding: 24px 16px 60px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#modal.open { display: flex; }
+
+.modal-inner {
+  width: 100%;
+  max-width: 860px;
+  border: 1px solid var(--border);
+  background: #1a0a0a;
+  margin-top: 8px;
+}
+
+.modal-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 20px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.modal-head-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+  color: var(--ink);
+  text-align: center;
+}
+
+.modal-head-right {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 6px;
+}
+
+.modal-head-meta {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.modal-close-btn {
+  font-family: 'Space Mono', monospace;
+  font-size: 7px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: none;
+  border: 1px solid var(--border);
+  padding: 5px 13px;
+  cursor: pointer;
+  color: var(--ink);
+  transition: background 0.15s, color 0.15s;
+}
+
+.modal-close-btn:hover { background: var(--ink); color: var(--bg); }
+
+/* Modal hero — images anchor to top, iframes fill 16:9 */
+.modal-hero {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+}
+
+.modal-hero-iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  display: block;
+  border: none;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Gallery grid */
+.modal-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 560px) {
+  .modal-gallery { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Each thumbnail cell */
+.modal-thumb {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  cursor: pointer;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.modal-thumb:hover,
+.modal-thumb.active {
+  opacity: 1;
+}
+
+.modal-thumb.active::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--ink);
+  pointer-events: none;
+}
+
+/* Media inside thumbnail — fills cell, no interaction */
+.modal-thumb-media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  pointer-events: none;
+}
+
+/* Vimeo iframes in thumbnails — silent background, no controls */
+.modal-thumb iframe.modal-thumb-media,
+iframe.modal-thumb-media {
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: none;
+}
+
+.modal-foot {
+  padding: 18px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.modal-desc {
+  font-size: 12px;
+  line-height: 1.8;
+  max-width: 500px;
+  opacity: 0.6;
+  font-style: italic;
+  color: var(--ink);
+}
+
+.modal-tags {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: right;
+  line-height: 2.2;
+}

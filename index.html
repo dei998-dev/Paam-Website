@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PAM</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="/" class="site-logo">
+      <img src="imgs/00_logos/Paaam_logo.svg" alt="PAM" />
+    </a>
+  </header>
+
+  <div id="canvas"></div>
+
+  <footer id="contact" class="site-footer">
+    <a href="https://www.behance.net/paamsilva" target="_blank" rel="noopener" class="footer-social">
+      <img src="imgs/00_logos/BE_logo.svg" alt="Behance" />
+    </a>
+    <a href="https://www.instagram.com/paaaaaaaaaaaaaaaam?igsh=MWY0cmZ2cjN3ZDFkYg==" target="_blank" rel="noopener" class="footer-social">
+      <img src="imgs/00_logos/INSTA_logo.svg" alt="Instagram" />
+    </a>
+    <a href="https://wa.link/hxvtx5" target="_blank" rel="noopener" class="footer-social">
+      <img src="imgs/00_logos/WA_logo.svg" alt="WhatsApp" />
+    </a>
+  </footer>
+
+  <!-- FLOATING CONTACT BUTTON -->
+  <a href="#contact" class="contact-btn" id="contact-trigger">contacto</a>
+
+  <!-- MODAL -->
+  <div id="modal" onclick="handleModalClick(event)">
+    <div class="modal-inner">
+      <div class="modal-head">
+        <span class="modal-head-title" id="modal-title"></span>
+        <div class="modal-head-right">
+          <span class="modal-head-meta" id="modal-meta"></span>
+          <button class="modal-close-btn" onclick="closeModal()">cerrar ×</button>
+        </div>
+      </div>
+      <img class="modal-hero" id="modal-hero" src="" alt="" />
+      <div class="modal-gallery" id="modal-gallery"></div>
+      <div id="#contact" class="modal-foot">
+        <p class="modal-desc" id="modal-desc"></p>
+        <div class="modal-tags" id="modal-tags"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
