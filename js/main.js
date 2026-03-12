@@ -30,7 +30,7 @@ var projects = [
   /* idx 3 — Mariposas */
   {
     title: 'Mariposas',
-    cover: 'https://vimeo.com/1172419600?fl=ip&fe=ec',
+    cover: 'imgs/23_glitch_video/tornasol.gif',
     gallery: null,
   },
   /* idx 4 — DFL */
@@ -48,7 +48,7 @@ var projects = [
   /* idx 6 — Krudo */
   {
     title: 'Krudo',
-    cover: 'https://vimeo.com/1172417000?fl=ip&fe=ec',
+    cover: 'imgs/09_krudo/krudo1.gif',
     gallery: ['imgs/09_krudo/krudo.gif'],
   },
   /* idx 7 — Origen */
@@ -102,8 +102,8 @@ var projects = [
   /* idx 15 — Cuadro */
   {
     title: 'Cuadro',
-    cover: 'https://vimeo.com/1172419782?fl=ip&fe=ec',
-    gallery: ['https://vimeo.com/1172419793?fl=ip&fe=ec', 'https://vimeo.com/1172419806?fl=ip&fe=ec', 'imgs/13_cuadro/1.webp', 'imgs/13_cuadro/2.webp', 'imgs/13_cuadro/3.webp', 'imgs/13_cuadro/5.webp'],
+    cover: 'imgs/13_cuadro/expoCuadro.gif',
+    gallery: ['imgs/13_cuadro/1.webp', 'imgs/13_cuadro/2.webp', 'imgs/13_cuadro/3.webp', 'imgs/13_cuadro/5.webp'],
   },
   /* idx 16 — Prints 2 */
   {
@@ -120,7 +120,7 @@ var projects = [
   /* idx 18 — Nero Cafe (video) */
   {
     title: 'Nero Cafe',
-    cover: 'https://vimeo.com/1172420115?fl=ip&fe=ec',
+    cover: 'imgs/17_nero/nero-cafee.gif',
     gallery: ['imgs/17_nero/nero_02.webp', 'imgs/17_nero/nero_03.webp', 'imgs/17_nero/nero_04.webp', 'imgs/17_nero/nero_05.webp', 'imgs/17_nero/nero_06.webp', 'imgs/17_nero/nero_07.webp', 'imgs/17_nero/nero_08.webp', 'imgs/17_nero/nero_post1.webp', 'imgs/17_nero/nero_post2.webp', 'imgs/17_nero/nero_post3.webp'],
   },
   /* idx 19 — Nero Cafe (photo) */
@@ -132,7 +132,7 @@ var projects = [
   /* idx 20 — Nero Cafe (video 2) */
   {
     title: 'Nero Cafe',
-    cover: 'https://vimeo.com/1172420124?fl=ip&fe=ec',
+    cover: 'imgs/17_nero/nero-ilustraciones.gif',
     gallery: null,
   },
   /* idx 21 — Cuatro */
@@ -149,21 +149,21 @@ var projects = [
   },
   /* idx 23 — Libro */
   {
-    title: 'Libro',
-    cover: 'https://vimeo.com/1172420084?fl=ip&fe=ec',
-    gallery: ['https://vimeo.com/1172420069?fl=ip&fe=ec', 'imgs/15_libro1/libro_1.webp', 'imgs/15_libro1/libro_2.webp', 'imgs/15_libro1/libro_3.webp', 'imgs/15_libro1/libro_4.webp', 'imgs/15_libro1/libro_5.webp', 'imgs/15_libro1/libro_6.webp', 'imgs/15_libro1/libro_7.webp', 'imgs/15_libro1/libro_8.webp', 'imgs/15_libro1/libro_cuatro.webp', 'imgs/15_libro1/libro_final.webp', 'imgs/15_libro1/portada.webp'],
+    title: 'Libro Bouquet',
+    cover: 'imgs/15_libro1/libro-bouquet.gif',
+    gallery: ['imgs/15_libro1/libro_1.webp', 'imgs/15_libro1/libro_2.webp', 'imgs/15_libro1/libro_3.webp', 'imgs/15_libro1/libro_4.webp', 'imgs/15_libro1/libro_5.webp', 'imgs/15_libro1/libro_6.webp', 'imgs/15_libro1/libro_7.webp', 'imgs/15_libro1/libro_8.webp', 'imgs/15_libro1/libro_cuatro.webp', 'imgs/15_libro1/libro_final.webp', 'imgs/15_libro1/portada.webp'],
   },
   /* idx 24 — Pajaras de Fuego */
   {
-    title: 'Pajaras de Fuego',
-    cover: 'https://vimeo.com/1172419229?fl=ip&fe=ec',
+    title: 'Pájaras de Fuego',
+    cover: 'imgs/11_pajaras_fuego/pajaras-de-fuego.gif',
     gallery: null,
   },
   /* idx 25 — Profana */
   {
     title: 'Profana',
-    cover: 'imgs/07_profana/profana.webp',
-    gallery: ['imgs/07_profana/profana.webp'],
+    cover: 'imgs/07_profana/Poster-Profana.gif',
+    gallery: null,
   },
   /* idx 26 — Mareas */
   {
@@ -236,7 +236,7 @@ var rows = [
   ],
   // #19 wide landscape center + #20 small square left below
   [
-    { idx: 18, leftPct: 14, widthPct: 68, aspect: 0.48, rot: -0.5, yOffset:  0 },
+    { idx: 18, leftPct: 20, widthPct: 53, aspect: 0.48, rot: -0.5, yOffset:  0 },
     { idx: 19, leftPct:  15, widthPct: 20, aspect: 1.00, rot:  2.0, yOffset: 200 },
   ],
   // #21 small square right + #22 big portrait left
