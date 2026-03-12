@@ -215,6 +215,8 @@ body {
     padding: 12px 20px;
     font-size: 10px;
   }
+
+  .card--decorative { display: none !important; }
 }
 
 /* ═══════════════════════════════════════════

@@ -43,7 +43,7 @@ var projects = [
   {
     title: 'Funkafest',
     cover: 'imgs/05_funka_fest/funka_POST1.webp',
-    gallery: ['imgs/05_funka_fest/funka_post2.webp', 'https://vimeo.com/1172415056?share=copy&fl=sv&fe=ci', 'https://vimeo.com/1172415208?fl=ip&fe=ec', 'imgs/05_funka_fest/funka_post3.webp', 'imgs/05_funka_fest/funka_uno.webp', 'imgs/05_funka_fest/funak_4.webp', 'imgs/05_funka_fest/funka_5.webp', 'imgs/05_funka_fest/funka_cartelera.webp', 'imgs/05_funka_fest/funka_llamada.webp'],
+    gallery: ['imgs/05_funka_fest/funka_post2.webp', 'imgs/05_funka_fest/funka_post3.webp', 'imgs/05_funka_fest/funka_uno.webp', 'imgs/05_funka_fest/funak_4.webp', 'imgs/05_funka_fest/funka_5.webp', 'imgs/05_funka_fest/funka_cartelera.webp', 'imgs/05_funka_fest/funka_llamada.webp'],
   },
   /* idx 6 — Krudo */
   {
@@ -169,7 +169,25 @@ var projects = [
   {
     title: 'Mareas',
     cover: 'imgs/16_mareas/mareas_00.webp',
-    gallery: ['https://vimeo.com/1172420092?fl=ip&fe=ec', 'imgs/16_mareas/mareas_01.webp', 'imgs/16_mareas/mareas_02.webp', 'imgs/16_mareas/mareas_03.webp', 'imgs/16_mareas/mareas_04.webp', 'imgs/16_mareas/mareas_05.webp', 'imgs/16_mareas/mareas_06.webp'],
+    gallery: ['imgs/16_mareas/mareas_01.webp', 'imgs/16_mareas/mareas_02.webp', 'imgs/16_mareas/mareas_03.webp', 'imgs/16_mareas/mareas_04.webp', 'imgs/16_mareas/mareas_05.webp', 'imgs/16_mareas/mareas_06.webp'],
+  },
+  /* idx 27 — Flor (decorative) */
+  {
+    title: 'Flor',
+    cover: 'imgs/05_funka_fest/flor.gif',
+    gallery: null,
+  },
+  /* idx 28 — Abeja (decorative) */
+  {
+    title: 'Abeja',
+    cover: 'imgs/05_funka_fest/abeja.gif',
+    gallery: null,
+  },
+  /* idx 29 — Nube (decorative) */
+  {
+    title: 'Nube',
+    cover: 'imgs/05_funka_fest/nube.gif',
+    gallery: null,
   },
 ];
 
@@ -202,7 +220,13 @@ var rows = [
   ],
   // #6 — tall poster portrait, center
   [
-    { idx:  5, leftPct: 24, widthPct: 46, aspect: 1.00, rot:  1.0, yOffset:  0 },
+    { idx:  5, leftPct: 30, widthPct: 35, aspect: 1.00, rot:  1.0, yOffset:  0 , zIdx: 10},
+  ],
+  // #6b — decorative GIFs (flor, abeja, nube) same row style as idx5
+  [
+    { idx: 27, leftPct: 5, widthPct: 15, aspect: 1.00, rot: -1.5, yOffset:  -250, zIdx: 5 },
+    { idx: 28, leftPct: 15, widthPct: 15, aspect: 1.00, rot:  1.0, yOffset: -400 },
+    { idx: 29, leftPct: 65, widthPct: 20, aspect: 1.00, rot: -0.5, yOffset:  -250 },
   ],
   // #7 — wide full-width landscape
   [
@@ -346,7 +370,7 @@ function buildCanvas() {
       var hPx = (vw * def.widthPct / 100) * def.aspect;
 
       var card = document.createElement('div');
-      card.className       = 'card';
+      card.className       = 'card' + (def.idx >= 27 ? ' card--decorative' : '');
       card.style.left      = def.leftPct + 'vw';
       card.style.top       = (cursorY + def.yOffset) + 'px';
       card.style.width     = def.widthPct + 'vw';
@@ -378,6 +402,7 @@ function buildCanvas() {
 function buildMobileCanvas(canvas) {
   canvas.style.height = '';
   projects.forEach(function(p, idx) {
+    if (idx >= 27) return; // skip decorative-only cards on mobile
     var card = document.createElement('div');
     card.className = 'card';
     card.appendChild(makeMedia(p.cover, 'card-img', p.title));
